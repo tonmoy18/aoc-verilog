@@ -1,0 +1,7 @@
+logs/*
+obj_dir/*
+*.log
+*.dmp
+*.vpd
+coverage.dat
+riscv-tests/hexfiles/*
