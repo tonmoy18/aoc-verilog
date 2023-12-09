@@ -26,7 +26,7 @@ for seed in seeds:
     for map_line in single_map:
       if item >= map_line[1] and item < map_line[1] + map_line[2]:
         new_item = map_line[0] + (item - map_line[1])
-        # print("Mapped {} to {}".format(item, new_item))
+        print("Mapped {} to {}".format(item, new_item))
         item = new_item
         break
   loc = item

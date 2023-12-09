@@ -36,6 +36,7 @@ with open (sys.argv[1]) as f:
             prev_line_had_symbol_in_range = 1
         if (prev_special_symbol_flag[i] == 1):
           prev_line_had_symbol_in_range = 1
+      # Char is not a number
       else:
         # Char is a special char
         if (ord(c) != ord('.') and ord(c) != 10):
@@ -57,6 +58,7 @@ with open (sys.argv[1]) as f:
             result += current_num
             print("INFO: adding B {}".format(current_num))
             current_num = 0
+        # char is a dot
         else:
           if (current_num > 0):
             print("INFO: i: {}".format(i))

@@ -8,8 +8,12 @@ The holiday season brings the joy of coding challenges through Advent of Code. T
 
 
 ## Prerequisites
+You can use any verilog simulator to run the soltuins. Just make sure to include the correct sol.sv for each specific problem and define the IN_FILENAME points to the input file. 
 
-To simulate and run the Verilog code in this project, you need to have [Verilator](https://www.veripool.org/wiki/verilator) installed. Verilator is a cycle-accurate Verilog to C++ transpiler and simulator. Make sure the `VERILATOR_ROOT` env variable to set and points to the installation directory such that the executable is  `VERILATOR_ROOT`/bin/verilator
+This code was tested using [Verilator](https://www.veripool.org/wiki/verilator) and the instructions for using that is given here.
+
+###
+Verilator is a cycle-accurate Verilog to C++ transpiler and simulator. To use is, first make sure it is installed properly. Then make sure the `VERILATOR_ROOT` env variable to set and points to the installation directory such that the executable is  `VERILATOR_ROOT`/bin/verilator
 
 ## Project Structure
 
@@ -21,7 +25,7 @@ The repository is organized as follows:
 
 ## Getting Started
 
-1. Install [Verilator](https://www.veripool.org/wiki/verilator)
+1. Install [Verilator](https://www.veripool.org/wiki/verilator) or any other verilog simulator
 
 2. Clone the repository:
 
@@ -30,12 +34,17 @@ The repository is organized as follows:
    cd advent-of-code-verilog
    ```
 
-3. Run the Day 2 Part 2 solution using trial.txt or input.txt
+3. Run the Day 2 Part 2 solution using trial.txt or input.txt using verilator
 
    ```bash
    cd vsim
    make SOL_DAY=day_2p2 FNAME_BASE=trial.txt
    make SOL_DAY=day_2p2 FNAME_BASE=input.txt
+   ```
+
+   if using some other simulator make sure to provide the `IN_FILENAME` plusarg and the tb as well as solution sv file as inputs. For example if using Cadence xrun:
+   ```bash
+   xrun +IN_FILENAME=solutions/day_1p1/input.txt tb/aoc_tb.sv solutions/day_1p1/sol.sv
    ```
 
 4. Explore the verilog designs in `solutions/day_*/sol.sv` files
